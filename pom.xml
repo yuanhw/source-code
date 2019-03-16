@@ -11,6 +11,9 @@
 
     <modules>
         <module>comm</module>
+        <module>java-api-8</module>
+        <module>s-mvc</module>
+        <module>s-ioc</module>
     </modules>
 
     <properties>
@@ -98,6 +101,19 @@
         </dependencies>
     </dependencyManagement>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- logback日志包 -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+        </dependency>
+    </dependencies>
     <build>
         <plugins>
             <plugin>
