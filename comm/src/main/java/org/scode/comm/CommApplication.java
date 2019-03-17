@@ -6,6 +6,5 @@ package org.scode.comm;
  */
 public class CommApplication {
     public static void main(String[] args) {
-
     }
 }

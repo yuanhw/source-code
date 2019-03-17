@@ -14,6 +14,7 @@
         <module>java-api-8</module>
         <module>s-mvc</module>
         <module>s-ioc</module>
+        <module>client</module>
     </modules>
 
     <properties>
@@ -24,7 +25,7 @@
         <servlet-api.version>4.0.1</servlet-api.version>
         <projectlombok.version>1.16.18</projectlombok.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <spring.version>5.0.8.RELEASE</spring.version>
+        <spring.version>4.3.8.RELEASE</spring.version>
         <jackson.version>2.9.5</jackson.version>
         <logback.version>1.2.3</logback.version>
         <okhttp3.version>3.11.0</okhttp3.version>
