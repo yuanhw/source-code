@@ -37,6 +37,8 @@ public class ClientApplication {
     private static void doTest1() {
         ServiceLoader<ServletContainerInitializer> loader = ServiceLoader.load(ServletContainerInitializer.class);
         loader.forEach(System.out::println);
+    }
+
     private static void testOne(int n) {
         boolean[] data = new boolean[n + 1];
         for (int i = 2; i <= n; i++) {
