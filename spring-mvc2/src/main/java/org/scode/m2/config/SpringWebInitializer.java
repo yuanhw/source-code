@@ -5,7 +5,7 @@ import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatche
 /**
  * @author wyh
  * @date 2019/3/21 9:06 PM
- * @description
+ * @description 基于java代码方式配置web容器
  */
 public class SpringWebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
     @Override

@@ -1,15 +1,17 @@
 package org.scode.m2.controller;
 
+import org.scode.m2.dto.Customer;
 import org.scode.m2.entity.User;
 import org.scode.m2.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.MatrixVariable;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.util.FileCopyUtils;
+import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -47,5 +49,27 @@ public class UserController extends BaseController{
     public String matrix(@PathVariable int id, @MatrixVariable Map<String, String> map) {
         this.logger.info("开始执行userInfo.");
         return map.toString() + "_" + id;
+    }
+
+    @GetMapping("getImg")
+    @ResponseBody
+    public byte[] getImg() throws IOException {
+        this.logger.info("开始读取文件.");
+        Resource resource = new ClassPathResource("p1.jpeg");
+        return FileCopyUtils.copyToByteArray(resource.getFile());
+    }
+
+    @RequestMapping("getHandler41")
+    @ResponseBody
+    public String handler41(@RequestBody String requestBody) {
+        this.logger.info(requestBody);
+        return "success";
+    }
+
+    @RequestMapping("xmlInfo")
+    @ResponseBody
+    public String xmlInfo(@RequestBody Customer customer) {
+        this.logger.info("customer info " + customer);
+        return "success";
     }
 }
