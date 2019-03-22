@@ -37,6 +37,24 @@ public class ClientApplication {
     private static void doTest1() {
         ServiceLoader<ServletContainerInitializer> loader = ServiceLoader.load(ServletContainerInitializer.class);
         loader.forEach(System.out::println);
+    private static void testOne(int n) {
+        boolean[] data = new boolean[n + 1];
+        for (int i = 2; i <= n; i++) {
+            data[i] = true;
+        }
+
+        int a = (int) Math.ceil(Math.sqrt(n));
+        for (int i = 2; i <= a; i++) {
+            for (int j = 2; j <= n / i; j++) {
+                data[i * j] = false;
+            }
+        }
+
+        for (int i = 2; i <= n; i++) {
+            if (data[i]) {
+                System.out.println(i);
+            }
+        }
     }
 }
 
