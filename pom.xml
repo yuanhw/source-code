@@ -29,6 +29,9 @@
         <jackson.version>2.9.5</jackson.version>
         <logback.version>1.2.3</logback.version>
         <okhttp3.version>3.11.0</okhttp3.version>
+
+        <mysql.conn.version>8.0.15</mysql.conn.version>
+        <mssql.conn.version>6.4.0.jre8</mssql.conn.version>
     </properties>
 
     <dependencyManagement>
@@ -46,7 +49,7 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
                 <version>${servlet-api.version}</version>
-                <scope>provided</scope>
+                <scope>test</scope>
             </dependency>
 
             <dependency>
@@ -99,6 +102,19 @@
                 <version>${okhttp3.version}</version>
             </dependency>
 
+            <!-- mysql连接驱动 -->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql.conn.version}</version>
+            </dependency>
+
+            <!-- mssql-jdbc -->
+            <dependency>
+                <groupId>com.microsoft.sqlserver</groupId>
+                <artifactId>mssql-jdbc</artifactId>
+                <version>${mssql.conn.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -123,6 +139,7 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
     <build>
         <plugins>
             <plugin>
